@@ -17,15 +17,15 @@ public:
 
     void displayParameters()  {
 
-        wcout << L"Параметры игры   " << endl;
-        wcout << L"День: " << day << endl;
-        wcout << L"Деньги: " << money << L"$" << endl;
-        wcout << L"Еда: " << eat << endl;
-        wcout << L"Популярность: " << popular << endl;
-        wcout << L"Животные: " << animal << endl;
-        wcout << L"Вольеров: " << aviary << endl;
-        wcout << L"Работников: " << workers << endl;
-        wcout << L"Посетители: " << visitors << endl;
+        wcout << L"РџР°СЂР°РјРµС‚СЂС‹ РёРіСЂС‹   " << endl;
+        wcout << L"Р”РµРЅСЊ: " << day << endl;
+        wcout << L"Р”РµРЅСЊРіРё: " << money << L"$" << endl;
+        wcout << L"Р•РґР°: " << eat << endl;
+        wcout << L"РџРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ: " << popular << endl;
+        wcout << L"Р–РёРІРѕС‚РЅС‹Рµ: " << animal << endl;
+        wcout << L"Р’РѕР»СЊРµСЂРѕРІ: " << aviary << endl;
+        wcout << L"Р Р°Р±РѕС‚РЅРёРєРѕРІ: " << workers << endl;
+        wcout << L"РџРѕСЃРµС‚РёС‚РµР»Рё: " << visitors << endl;
     }
 
     void increaseDay() { day++; }
@@ -48,10 +48,10 @@ public:
         if (money >= totalCost) {
             eat += amount;
             spendMoney(totalCost);
-            wcout << L"Куплено " << amount << L" единиц еды за " << totalCost << L"$." << endl;
+            wcout << L"РљСѓРїР»РµРЅРѕ " << amount << L" РµРґРёРЅРёС† РµРґС‹ Р·Р° " << totalCost << L"$." << endl;
         }
         else {
-            wcout << L"Не хватает денег для покупки " << amount << L" единиц еды! Необходимая сумма: " << totalCost << L"$." << endl;
+            wcout << L"РќРµ С…РІР°С‚Р°РµС‚ РґРµРЅРµРі РґР»СЏ РїРѕРєСѓРїРєРё " << amount << L" РµРґРёРЅРёС† РµРґС‹! РќРµРѕР±С…РѕРґРёРјР°СЏ СЃСѓРјРјР°: " << totalCost << L"$." << endl;
         }
     }
 
@@ -118,11 +118,11 @@ public:
     };
 
     virtual void printInfo() const {
-        wcout << L"Имя: " << name << L", Возраст: " << age << L", Вес: " << weight
-            << L" кг, Цена: " << price << L" руб., ID: " << id << L", Вольер: "
-            << (volier_id == -1 ? L"Нет" : to_wstring(volier_id + 1)) << L", Климат: "
-            << climate << L", Тип: " << (isPredator ? L"Хищник" : L"Травоядное")
-            << L", Состояние: " << (isAlive ? L"Живое " : L"Мертвое ") << (pol == B ? L"мужик" : L"женщина")  << (zabolel == true ? L" ЕБЛО ЗАБОЛЕЛО" : L" SPEED НЕ ОБНАРУЖЕН") << endl;
+        wcout << L"РРјСЏ: " << name << L", Р’РѕР·СЂР°СЃС‚: " << age << L", Р’РµСЃ: " << weight
+            << L" РєРі, Р¦РµРЅР°: " << price << L" СЂСѓР±., ID: " << id << L", Р’РѕР»СЊРµСЂ: "
+            << (volier_id == -1 ? L"РќРµС‚" : to_wstring(volier_id + 1)) << L", РљР»РёРјР°С‚: "
+            << climate << L", РўРёРї: " << (isPredator ? L"РҐРёС‰РЅРёРє" : L"РўСЂР°РІРѕСЏРґРЅРѕРµ")
+            << L", РЎРѕСЃС‚РѕСЏРЅРёРµ: " << (isAlive ? L"Р–РёРІРѕРµ " : L"РњРµСЂС‚РІРѕРµ ") << (pol == B ? L"РјСѓР¶РёРє" : L"Р¶РµРЅС‰РёРЅР°")  << (zabolel == true ? L" Р•Р‘Р›Рћ Р—РђР‘РћР›Р•Р›Рћ" : L" SPEED РќР• РћР‘РќРђР РЈР–Р•Рќ") << endl;
     }
 
     
@@ -143,35 +143,35 @@ public:
 class TropicalCat : public Animal {
 public:
 
-    TropicalCat(int id) : Animal(L"Тропический кот", 3, 4, 1000, id, L"Тропический", true, tropcat, 0) {}
+    TropicalCat(int id) : Animal(L"РўСЂРѕРїРёС‡РµСЃРєРёР№ РєРѕС‚", 3, 4, 1000, id, L"РўСЂРѕРїРёС‡РµСЃРєРёР№", true, tropcat, 0) {}
 };
 
 class TropicalDog : public Animal {
 public:
-    TropicalDog(int id) : Animal(L"Тропическая собака", 5, 20, 5000, id, L"Тропический", false, tropdog, 0) {}
+    TropicalDog(int id) : Animal(L"РўСЂРѕРїРёС‡РµСЃРєР°СЏ СЃРѕР±Р°РєР°", 5, 20, 5000, id, L"РўСЂРѕРїРёС‡РµСЃРєРёР№", false, tropdog, 0) {}
 };
 
 class SeaLion : public Animal {
 public:
-    SeaLion(int id) : Animal(L"Морской котик", 4, 100, 8000, id, L"Тропический", false, aquacat,0) {}
+    SeaLion(int id) : Animal(L"РњРѕСЂСЃРєРѕР№ РєРѕС‚РёРє", 4, 100, 8000, id, L"РўСЂРѕРїРёС‡РµСЃРєРёР№", false, aquacat,0) {}
 };
 
 class Shark : public Animal {
 public:
-    Shark(int id) : Animal(L"Акула", 10, 200, 15000, id, L"Арктический", true, shark, 0) {}
+    Shark(int id) : Animal(L"РђРєСѓР»Р°", 10, 200, 15000, id, L"РђСЂРєС‚РёС‡РµСЃРєРёР№", true, shark, 0) {}
 };
 
 class ArcticCat : public Animal {
 public:
-    ArcticCat(int id) : Animal(L"Арктический кот", 3, 4, 1000, id, L"Арктический", true, arccat, 0) {}
+    ArcticCat(int id) : Animal(L"РђСЂРєС‚РёС‡РµСЃРєРёР№ РєРѕС‚", 3, 4, 1000, id, L"РђСЂРєС‚РёС‡РµСЃРєРёР№", true, arccat, 0) {}
 };
 
 class ArcticDog : public Animal {
 public:
-    ArcticDog(int id) : Animal(L"Арктическая собака", 5, 20, 5000, id, L"Арктический", false, arcdog, 0) {}
+    ArcticDog(int id) : Animal(L"РђСЂРєС‚РёС‡РµСЃРєР°СЏ СЃРѕР±Р°РєР°", 5, 20, 5000, id, L"РђСЂРєС‚РёС‡РµСЃРєРёР№", false, arcdog, 0) {}
 };
 
-// Новый класс для гибридных животных
+// РќРѕРІС‹Р№ РєР»Р°СЃСЃ РґР»СЏ РіРёР±СЂРёРґРЅС‹С… Р¶РёРІРѕС‚РЅС‹С…
 class HybridAnimal : public Animal {
 private:
     wstring parent1;
@@ -183,7 +183,7 @@ public:
 
     void printInfo() const override {
         Animal::printInfo();
-        wcout << L"Родители: " << parent1 << L" и " << parent2 << endl;
+        wcout << L"Р РѕРґРёС‚РµР»Рё: " << parent1 << L" Рё " << parent2 << endl;
     }
 };
 
@@ -217,8 +217,8 @@ public:
         : capacity(capacity), climateType(climateType), price(price), isPredator(isPredator) {}
 
     void printInfo() const {
-        wcout << L"Вольер: Вместимость " << capacity << L", Климат: " << climateType
-            << L", Цена: " << price << L" руб., Тип: " << (isPredator ? L"Хищники" : L"Травоядные") << endl;
+        wcout << L"Р’РѕР»СЊРµСЂ: Р’РјРµСЃС‚РёРјРѕСЃС‚СЊ " << capacity << L", РљР»РёРјР°С‚: " << climateType
+            << L", Р¦РµРЅР°: " << price << L" СЂСѓР±., РўРёРї: " << (isPredator ? L"РҐРёС‰РЅРёРєРё" : L"РўСЂР°РІРѕСЏРґРЅС‹Рµ") << endl;
     }
     int getcapacity() const { return capacity + 5; }
     int getPrice() const { return price; }
@@ -238,7 +238,7 @@ public:
     GameParameters parameters;
 
     ZooManager() : next_animal_id(1), next_worker_id(1) {
-        workers.push_back(new Worker(next_worker_id++, L"Игорь"));
+        workers.push_back(new Worker(next_worker_id++, L"РРіРѕСЂСЊ"));
         srand(static_cast<unsigned int>(time(0)));
     }
 
@@ -248,28 +248,28 @@ public:
     }
 
     void buyWorker() {
-        wcout << L"Цена за работника: 3000 руб.\n";
-        wcout << L"Введите имя работника: ";
+        wcout << L"Р¦РµРЅР° Р·Р° СЂР°Р±РѕС‚РЅРёРєР°: 3000 СЂСѓР±.\n";
+        wcout << L"Р’РІРµРґРёС‚Рµ РёРјСЏ СЂР°Р±РѕС‚РЅРёРєР°: ";
         wstring workerName;
         wcin >> workerName;
 
         for (auto& worker : workers) {
             if (worker->getName() == workerName) {
-                wcout << L"Работник с таким именем уже существует." << endl;
+                wcout << L"Р Р°Р±РѕС‚РЅРёРє СЃ С‚Р°РєРёРј РёРјРµРЅРµРј СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚." << endl;
                 return;
             }
         }
 
         int workerPrice = 3000;
         if (parameters.getMoney() < workerPrice) {
-            wcout << L"Не хватает денег для покупки работника. Необходимая сумма: " << workerPrice << L" руб.\n";
+            wcout << L"РќРµ С…РІР°С‚Р°РµС‚ РґРµРЅРµРі РґР»СЏ РїРѕРєСѓРїРєРё СЂР°Р±РѕС‚РЅРёРєР°. РќРµРѕР±С…РѕРґРёРјР°СЏ СЃСѓРјРјР°: " << workerPrice << L" СЂСѓР±.\n";
             return;
         }
 
         parameters.spendMoney(workerPrice);
         workers.push_back(new Worker(next_worker_id++, workerName));
         parameters.addWorker();
-        wcout << L"Работник " << workerName << L" успешно куплен!" << endl;
+        wcout << L"Р Р°Р±РѕС‚РЅРёРє " << workerName << L" СѓСЃРїРµС€РЅРѕ РєСѓРїР»РµРЅ!" << endl;
     }
 
     void feedAnimals() {
@@ -280,21 +280,21 @@ public:
             for (auto& animal : animals) {
                 if (animal->isAliveStatus() && (static_cast<double>(rand()) / RAND_MAX > 0.5)) {
                     animal->die();
-                    wcout << L"Животное " << animal->getId() << L" умерло от голода!" << endl;
+                    wcout << L"Р–РёРІРѕС‚РЅРѕРµ " << animal->getId() << L" СѓРјРµСЂР»Рѕ РѕС‚ РіРѕР»РѕРґР°!" << endl;
                 }
             }
         }
     }
 
     void buyFood() {
-        wcout << L"Сколько единиц еды хотите купить? ";
+        wcout << L"РЎРєРѕР»СЊРєРѕ РµРґРёРЅРёС† РµРґС‹ С…РѕС‚РёС‚Рµ РєСѓРїРёС‚СЊ? ";
         int amount;
         wcin >> amount;
         parameters.buyFood(amount);
     }
 
     void sellAnimal() {
-        wcout << L"Введите ID животного, которое хотите продать: ";
+        wcout << L"Р’РІРµРґРёС‚Рµ ID Р¶РёРІРѕС‚РЅРѕРіРѕ, РєРѕС‚РѕСЂРѕРµ С…РѕС‚РёС‚Рµ РїСЂРѕРґР°С‚СЊ: ";
         int animal_id;
         wcin >> animal_id;
 
@@ -306,35 +306,35 @@ public:
             Animal* animalToSell = *it;
             parameters.earnMoney(animalToSell->getPrice());
             parameters.removeAnimal();
-            wcout << L"Животное " << animal_id << L" продано за " << animalToSell->getPrice() << L"$." << endl;
+            wcout << L"Р–РёРІРѕС‚РЅРѕРµ " << animal_id << L" РїСЂРѕРґР°РЅРѕ Р·Р° " << animalToSell->getPrice() << L"$." << endl;
             delete animalToSell;
             animals.erase(it);
         }
         else {
-            wcout << L"Животное с таким ID не найдено." << endl;
+            wcout << L"Р–РёРІРѕС‚РЅРѕРµ СЃ С‚Р°РєРёРј ID РЅРµ РЅР°Р№РґРµРЅРѕ." << endl;
         }
     }
 
     void randomEvents() {
         int event = rand() % 4;
         switch (event) {
-        case 0: wcout << L"Случайное событие: Местные СМИ опубликовали положительный обзор, популярность увеличивается на 10!" << endl;
+        case 0: wcout << L"РЎР»СѓС‡Р°Р№РЅРѕРµ СЃРѕР±С‹С‚РёРµ: РњРµСЃС‚РЅС‹Рµ РЎРњР РѕРїСѓР±Р»РёРєРѕРІР°Р»Рё РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Р№ РѕР±Р·РѕСЂ, РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ СѓРІРµР»РёС‡РёРІР°РµС‚СЃСЏ РЅР° 10!" << endl;
             parameters.setPopularity(parameters.getPopularity() + 10); break;
-        case 1: wcout << L"Случайное событие: У вас одни из животных игрось попытался утопить -5 популярности." << endl;
+        case 1: wcout << L"РЎР»СѓС‡Р°Р№РЅРѕРµ СЃРѕР±С‹С‚РёРµ: РЈ РІР°СЃ РѕРґРЅРё РёР· Р¶РёРІРѕС‚РЅС‹С… РёРіСЂРѕСЃСЊ РїРѕРїС‹С‚Р°Р»СЃСЏ СѓС‚РѕРїРёС‚СЊ -5 РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚Рё." << endl;
             parameters.setPopularity(parameters.getPopularity() - 5); break;
-        case 2: wcout << L"Случайное событие: Проведена благотворительная акция, популярность увеличивается на 20!" << endl;
+        case 2: wcout << L"РЎР»СѓС‡Р°Р№РЅРѕРµ СЃРѕР±С‹С‚РёРµ: РџСЂРѕРІРµРґРµРЅР° Р±Р»Р°РіРѕС‚РІРѕСЂРёС‚РµР»СЊРЅР°СЏ Р°РєС†РёСЏ, РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ СѓРІРµР»РёС‡РёРІР°РµС‚СЃСЏ РЅР° 20!" << endl;
             parameters.setPopularity(parameters.getPopularity() + 20); break;
-        case 3: wcout << L"Случайное событие: Возникли проблемы с одним из работником, популярность снизилась на 5!" << endl;
+        case 3: wcout << L"РЎР»СѓС‡Р°Р№РЅРѕРµ СЃРѕР±С‹С‚РёРµ: Р’РѕР·РЅРёРєР»Рё РїСЂРѕР±Р»РµРјС‹ СЃ РѕРґРЅРёРј РёР· СЂР°Р±РѕС‚РЅРёРєРѕРј, РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ СЃРЅРёР·РёР»Р°СЃСЊ РЅР° 5!" << endl;
             parameters.setPopularity(parameters.getPopularity() - 5); break;
         }
     }
 
     void buyPopularity() {
-        wcout << L"Выберите, сколько популярности хотите купить:\n";
-        wcout << L"1. За 100$ ( +10 )\n";
-        wcout << L"2. За 1000$ ( +10 до +100 случайно )\n";
-        wcout << L"3. За 10000$ ( +100 )\n";
-        wcout << L"Ваш выбор: ";
+        wcout << L"Р’С‹Р±РµСЂРёС‚Рµ, СЃРєРѕР»СЊРєРѕ РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚Рё С…РѕС‚РёС‚Рµ РєСѓРїРёС‚СЊ:\n";
+        wcout << L"1. Р—Р° 100$ ( +10 )\n";
+        wcout << L"2. Р—Р° 1000$ ( +10 РґРѕ +100 СЃР»СѓС‡Р°Р№РЅРѕ )\n";
+        wcout << L"3. Р—Р° 10000$ ( +100 )\n";
+        wcout << L"Р’Р°С€ РІС‹Р±РѕСЂ: ";
         int choice;
         wcin >> choice;
 
@@ -342,23 +342,23 @@ public:
         case 1: if (parameters.getMoney() >= 100) {
             parameters.spendMoney(100);
             parameters.setPopularity(parameters.getPopularity() + 10);
-            wcout << L"Популярность увеличена на 10." << endl;
+            wcout << L"РџРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ СѓРІРµР»РёС‡РµРЅР° РЅР° 10." << endl;
         }
-              else wcout << L"Не хватает денег для покупки популярности." << endl; break;
+              else wcout << L"РќРµ С…РІР°С‚Р°РµС‚ РґРµРЅРµРі РґР»СЏ РїРѕРєСѓРїРєРё РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚Рё." << endl; break;
         case 2: if (parameters.getMoney() >= 1000) {
             parameters.spendMoney(1000);
             int increase = 10 + rand() % 91;
             parameters.setPopularity(parameters.getPopularity() + increase);
-            wcout << L"Популярность увеличена на " << increase << L"." << endl;
+            wcout << L"РџРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ СѓРІРµР»РёС‡РµРЅР° РЅР° " << increase << L"." << endl;
         }
-              else wcout << L"Не хватает денег для покупки популярности." << endl; break;
+              else wcout << L"РќРµ С…РІР°С‚Р°РµС‚ РґРµРЅРµРі РґР»СЏ РїРѕРєСѓРїРєРё РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚Рё." << endl; break;
         case 3: if (parameters.getMoney() >= 10000) {
             parameters.spendMoney(10000);
             parameters.setPopularity(parameters.getPopularity() + 100);
-            wcout << L"Популярность увеличена на 100." << endl;
+            wcout << L"РџРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ СѓРІРµР»РёС‡РµРЅР° РЅР° 100." << endl;
         }
-              else wcout << L"Не хватает денег для покупки популярности." << endl; break;
-        default: wcout << L"Некорректный выбор." << endl;
+              else wcout << L"РќРµ С…РІР°С‚Р°РµС‚ РґРµРЅРµРі РґР»СЏ РїРѕРєСѓРїРєРё РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚Рё." << endl; break;
+        default: wcout << L"РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІС‹Р±РѕСЂ." << endl;
         }
     }
 
@@ -386,7 +386,7 @@ public:
                
 
             }
-            wcout << L"гандон заболел\n";
+            wcout << L"РіР°РЅРґРѕРЅ Р·Р°Р±РѕР»РµР»\n";
             
 
         }
@@ -414,14 +414,14 @@ public:
 
 
         }
-        wcout << L"гандон заболел\n";
+        wcout << L"РіР°РЅРґРѕРЅ Р·Р°Р±РѕР»РµР»\n";
         
     }
 
     void AIBOLIT() {
 
         showAnimals();
-        wcout << L"введте животное которое хотите вылечить:\n";
+        wcout << L"РІРІРµРґС‚Рµ Р¶РёРІРѕС‚РЅРѕРµ РєРѕС‚РѕСЂРѕРµ С…РѕС‚РёС‚Рµ РІС‹Р»РµС‡РёС‚СЊ:\n";
 
         int idanimal;
         wcin >> idanimal;
@@ -442,18 +442,18 @@ public:
         feedAnimals();
         int dailyIncome = parameters.getVisitors() * parameters.getAnimals();
         parameters.earnMoney(dailyIncome);
-        wcout << L"Заработок за день: " << dailyIncome << L"$" << endl;
+        wcout << L"Р—Р°СЂР°Р±РѕС‚РѕРє Р·Р° РґРµРЅСЊ: " << dailyIncome << L"$" << endl;
         parameters.randomizePopularity();
         parameters.calculateVisitors();
         randomEvents();
         parameters.increaseDay();
         
         if (parameters.getMoney() < 0) {
-            wcout << L"Вы проиграли! У вас не осталось денег." << endl;
+            wcout << L"Р’С‹ РїСЂРѕРёРіСЂР°Р»Рё! РЈ РІР°СЃ РЅРµ РѕСЃС‚Р°Р»РѕСЃСЊ РґРµРЅРµРі." << endl;
             exit(0);
         }
 
-        wcout << L"=== Конец дня ===" << endl;
+        wcout << L"=== РљРѕРЅРµС† РґРЅСЏ ===" << endl;
         parameters.displayParameters();
 
         int parent1 = 0, parent2 = 0, parent3 = 0 , schetzabol = 0, parent4 = 0 , parent5 = 0;
@@ -492,7 +492,7 @@ public:
                     Animal* animalToSell = *it;
                     
                     parameters.removeAnimal();
-                    wcout << L"Животное " << animal_id << L" погибло в борьбе со скоростью " << endl;
+                    wcout << L"Р–РёРІРѕС‚РЅРѕРµ " << animal_id << L" РїРѕРіРёР±Р»Рѕ РІ Р±РѕСЂСЊР±Рµ СЃРѕ СЃРєРѕСЂРѕСЃС‚СЊСЋ " << endl;
                     delete animalToSell;
                     animals.erase(it);
                 }
@@ -509,19 +509,19 @@ public:
     }
 
     void buyAnimal() {
-        if (workers.empty() || (workers.size() == 1 && workers[0]->getName() == L"Игорь" && workers[0]->isBusy())) {
-            wcout << L"Нет доступных работников для обслуживания вольеров. Нельзя купить животное." << endl;
+        if (workers.empty() || (workers.size() == 1 && workers[0]->getName() == L"РРіРѕСЂСЊ" && workers[0]->isBusy())) {
+            wcout << L"РќРµС‚ РґРѕСЃС‚СѓРїРЅС‹С… СЂР°Р±РѕС‚РЅРёРєРѕРІ РґР»СЏ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЏ РІРѕР»СЊРµСЂРѕРІ. РќРµР»СЊР·СЏ РєСѓРїРёС‚СЊ Р¶РёРІРѕС‚РЅРѕРµ." << endl;
             return;
         }
 
-        wcout << L"Выберите животное для покупки:\n";
-        wcout << L"1. Тропический кот (1000 руб.)\n";
-        wcout << L"2. Тропическая собака (5000 руб.)\n";
-        wcout << L"3. Арктический кот (1000 руб.)\n";
-        wcout << L"4. Арктическая собака (5000 руб.)\n";
-        wcout << L"5. Морской котик (8000 руб.)\n";
-        wcout << L"6. Акула (15000 руб.)\n";
-        wcout << L"Ваш выбор: ";
+        wcout << L"Р’С‹Р±РµСЂРёС‚Рµ Р¶РёРІРѕС‚РЅРѕРµ РґР»СЏ РїРѕРєСѓРїРєРё:\n";
+        wcout << L"1. РўСЂРѕРїРёС‡РµСЃРєРёР№ РєРѕС‚ (1000 СЂСѓР±.)\n";
+        wcout << L"2. РўСЂРѕРїРёС‡РµСЃРєР°СЏ СЃРѕР±Р°РєР° (5000 СЂСѓР±.)\n";
+        wcout << L"3. РђСЂРєС‚РёС‡РµСЃРєРёР№ РєРѕС‚ (1000 СЂСѓР±.)\n";
+        wcout << L"4. РђСЂРєС‚РёС‡РµСЃРєР°СЏ СЃРѕР±Р°РєР° (5000 СЂСѓР±.)\n";
+        wcout << L"5. РњРѕСЂСЃРєРѕР№ РєРѕС‚РёРє (8000 СЂСѓР±.)\n";
+        wcout << L"6. РђРєСѓР»Р° (15000 СЂСѓР±.)\n";
+        wcout << L"Р’Р°С€ РІС‹Р±РѕСЂ: ";
 
         int animalType;
         wcin >> animalType;
@@ -535,12 +535,12 @@ public:
         case 4: newAnimal = new ArcticDog(next_animal_id++); break;
         case 5: newAnimal = new SeaLion(next_animal_id++); break;
         case 6: newAnimal = new Shark(next_animal_id++); break;
-        default: wcout << L"Некорректный выбор!" << endl; return;
+        default: wcout << L"РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІС‹Р±РѕСЂ!" << endl; return;
         }
 
         if (parameters.getMoney() < newAnimal->getPrice()) {
-            wcout << L"Не хватает денег для покупки " << newAnimal->getId() << L". Необходимая сумма: "
-                << newAnimal->getPrice() << L" руб.\n";
+            wcout << L"РќРµ С…РІР°С‚Р°РµС‚ РґРµРЅРµРі РґР»СЏ РїРѕРєСѓРїРєРё " << newAnimal->getId() << L". РќРµРѕР±С…РѕРґРёРјР°СЏ СЃСѓРјРјР°: "
+                << newAnimal->getPrice() << L" СЂСѓР±.\n";
             delete newAnimal;
             return;
         }
@@ -548,47 +548,47 @@ public:
         animals.push_back(newAnimal);
         parameters.addAnimal();
         parameters.spendMoney(newAnimal->getPrice());
-        wcout << L"Животное успешно куплено." << endl;
+        wcout << L"Р–РёРІРѕС‚РЅРѕРµ СѓСЃРїРµС€РЅРѕ РєСѓРїР»РµРЅРѕ." << endl;
     }
 
     void assignWorkerToVolier() {
-        wcout << L"Введите имя работника: ";
+        wcout << L"Р’РІРµРґРёС‚Рµ РёРјСЏ СЂР°Р±РѕС‚РЅРёРєР°: ";
         wstring workerName;
         wcin >> workerName;
 
         for (auto& worker : workers) {
             if (worker->getName() == workerName) {
                 if (worker->isBusy()) {
-                    wcout << L"Этот работник уже занят." << endl;
+                    wcout << L"Р­С‚РѕС‚ СЂР°Р±РѕС‚РЅРёРє СѓР¶Рµ Р·Р°РЅСЏС‚." << endl;
                     return;
                 }
 
-                wcout << L"Выберите вольер для назначения: " << endl;
+                wcout << L"Р’С‹Р±РµСЂРёС‚Рµ РІРѕР»СЊРµСЂ РґР»СЏ РЅР°Р·РЅР°С‡РµРЅРёСЏ: " << endl;
                 for (size_t i = 0; i < voliers.size(); ++i) {
                     wcout << L"ID: " << (i + 1) << L" ";
                     voliers[i].printInfo();
                 }
 
-                wcout << L"Введите номер вольера: ";
+                wcout << L"Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РІРѕР»СЊРµСЂР°: ";
                 int volier_index;
                 wcin >> volier_index;
 
                 if (volier_index < 1 || volier_index > voliers.size()) {
-                    wcout << L"Некорректный номер вольера." << endl;
+                    wcout << L"РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РЅРѕРјРµСЂ РІРѕР»СЊРµСЂР°." << endl;
                     return;
                 }
 
                 worker->assignVolier(volier_index - 1);
-                wcout << worker->getName() << L" успешно назначен на вольер " << volier_index << endl;
+                wcout << worker->getName() << L" СѓСЃРїРµС€РЅРѕ РЅР°Р·РЅР°С‡РµРЅ РЅР° РІРѕР»СЊРµСЂ " << volier_index << endl;
                 return;
             }
         }
 
-        wcout << L"Работник с именем " << workerName << L" не найден." << endl;
+        wcout << L"Р Р°Р±РѕС‚РЅРёРє СЃ РёРјРµРЅРµРј " << workerName << L" РЅРµ РЅР°Р№РґРµРЅ." << endl;
     }
 
     void placeAnimalInVolier() {
-        wcout << L"Введите ID животного, которое хотите разместить: ";
+        wcout << L"Р’РІРµРґРёС‚Рµ ID Р¶РёРІРѕС‚РЅРѕРіРѕ, РєРѕС‚РѕСЂРѕРµ С…РѕС‚РёС‚Рµ СЂР°Р·РјРµСЃС‚РёС‚СЊ: ";
         int animal_id;
         wcin >> animal_id;
 
@@ -601,7 +601,7 @@ public:
         }
 
         if (animalToPlace == nullptr) {
-            wcout << L"Животное с таким ID не найдено." << endl;
+            wcout << L"Р–РёРІРѕС‚РЅРѕРµ СЃ С‚Р°РєРёРј ID РЅРµ РЅР°Р№РґРµРЅРѕ." << endl;
             return;
         }
 
@@ -614,51 +614,51 @@ public:
         }
 
         if (!hasWorker) {
-            wcout << L"Нет доступного работника для размещения животного." << endl;
+            wcout << L"РќРµС‚ РґРѕСЃС‚СѓРїРЅРѕРіРѕ СЂР°Р±РѕС‚РЅРёРєР° РґР»СЏ СЂР°Р·РјРµС‰РµРЅРёСЏ Р¶РёРІРѕС‚РЅРѕРіРѕ." << endl;
             return;
         }
 
-        wcout << L"Выберите вольер для размещения животного: " << endl;
+        wcout << L"Р’С‹Р±РµСЂРёС‚Рµ РІРѕР»СЊРµСЂ РґР»СЏ СЂР°Р·РјРµС‰РµРЅРёСЏ Р¶РёРІРѕС‚РЅРѕРіРѕ: " << endl;
         for (size_t i = 0; i < voliers.size(); ++i) {
             wcout << L"ID: " << (i + 1) << L" ";
             voliers[i].printInfo();
         }
 
-        wcout << L"Введите номер вольера: ";
+        wcout << L"Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РІРѕР»СЊРµСЂР°: ";
         int volier_index;
         wcin >> volier_index;
 
         if (volier_index < 1 || volier_index > voliers.size()) {
-            wcout << L"Некорректный номер вольера." << endl;
+            wcout << L"РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РЅРѕРјРµСЂ РІРѕР»СЊРµСЂР°." << endl;
             return;
         }
 
         if (animalToPlace->getClimate() != voliers[volier_index - 1].getClimateType()) {
-            wcout << L"Неверный климат для размещения животного в вольере." << endl;
+            wcout << L"РќРµРІРµСЂРЅС‹Р№ РєР»РёРјР°С‚ РґР»СЏ СЂР°Р·РјРµС‰РµРЅРёСЏ Р¶РёРІРѕС‚РЅРѕРіРѕ РІ РІРѕР»СЊРµСЂРµ." << endl;
             return;
         }
 
         if (animalToPlace->getIsPredator() != voliers[volier_index - 1].getIsPredator()) {
-            wstring animalType = animalToPlace->getIsPredator() ? L"хищник" : L"травоядное";
-            wstring volierType = voliers[volier_index - 1].getIsPredator() ? L"хищников" : L"травоядных";
-            wcout << L"Ошибка! Это животное - " << animalType
-                << L", а вольер предназначен для " << volierType << L"." << endl;
+            wstring animalType = animalToPlace->getIsPredator() ? L"С…РёС‰РЅРёРє" : L"С‚СЂР°РІРѕСЏРґРЅРѕРµ";
+            wstring volierType = voliers[volier_index - 1].getIsPredator() ? L"С…РёС‰РЅРёРєРѕРІ" : L"С‚СЂР°РІРѕСЏРґРЅС‹С…";
+            wcout << L"РћС€РёР±РєР°! Р­С‚Рѕ Р¶РёРІРѕС‚РЅРѕРµ - " << animalType
+                << L", Р° РІРѕР»СЊРµСЂ РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅ РґР»СЏ " << volierType << L"." << endl;
             return;
         }
 
         animalToPlace->setVolierId(volier_index - 1);
-        wcout << L"Животное успешно размещено в вольер!" << endl;
+        wcout << L"Р–РёРІРѕС‚РЅРѕРµ СѓСЃРїРµС€РЅРѕ СЂР°Р·РјРµС‰РµРЅРѕ РІ РІРѕР»СЊРµСЂ!" << endl;
     }
 
     void showAnimals() const {
-        wcout << L"\n=== Животные ===" << endl;
+        wcout << L"\n=== Р–РёРІРѕС‚РЅС‹Рµ ===" << endl;
         for (const auto& animal : animals) {
             animal->printInfo();
         }
     }
 
     void showVoliers() const {
-        wcout << L"\n=== Вольеры ===" << endl;
+        wcout << L"\n=== Р’РѕР»СЊРµСЂС‹ ===" << endl;
         for (size_t i = 0; i < voliers.size(); ++i) {
             wcout << L"ID: " << (i + 1) << L" ";
             voliers[i].printInfo();
@@ -666,29 +666,29 @@ public:
     }
 
     void showWorkers() const {
-        wcout << L"\n=== Работники ===" << endl;
+        wcout << L"\n=== Р Р°Р±РѕС‚РЅРёРєРё ===" << endl;
         for (const auto& worker : workers) {
             wcout << L"ID: " << worker->getId()
-                << L", Имя: " << worker->getName()
-                << L", ID вольера: "
-                << (worker->isBusy() ? to_wstring(worker->getVolierID() + 1) : L"Нет") << endl;
+                << L", РРјСЏ: " << worker->getName()
+                << L", ID РІРѕР»СЊРµСЂР°: "
+                << (worker->isBusy() ? to_wstring(worker->getVolierID() + 1) : L"РќРµС‚") << endl;
         }
     }
 
     void breedAnimals() {
         showAnimals();
-        wcout << L"Введите ID первого животного: ";
+        wcout << L"Р’РІРµРґРёС‚Рµ ID РїРµСЂРІРѕРіРѕ Р¶РёРІРѕС‚РЅРѕРіРѕ: ";
         int id1;
         wcin >> id1;
 
-        wcout << L"Введите ID второго животного: ";
+        wcout << L"Р’РІРµРґРёС‚Рµ ID РІС‚РѕСЂРѕРіРѕ Р¶РёРІРѕС‚РЅРѕРіРѕ: ";
         int id2;
         wcin >> id2;
 
         Animal* parent1 = nullptr;
         Animal* parent2 = nullptr;
 
-        // Найти родителей по ID
+        // РќР°Р№С‚Рё СЂРѕРґРёС‚РµР»РµР№ РїРѕ ID
         for (auto& animal : animals) {
             if (animal->getId() == id1) {
                 parent1 = animal;
@@ -699,88 +699,88 @@ public:
         }
 
         if (!parent1 || !parent2) {
-            wcout << L"Одно или оба из указанных животных не найдены." << endl;
+            wcout << L"РћРґРЅРѕ РёР»Рё РѕР±Р° РёР· СѓРєР°Р·Р°РЅРЅС‹С… Р¶РёРІРѕС‚РЅС‹С… РЅРµ РЅР°Р№РґРµРЅС‹." << endl;
             return;
         }
 
         if (parent1->getId() == parent2->getId()) {
-            wcout << L"Нельзя размножать одно и то же животное." << endl;
+            wcout << L"РќРµР»СЊР·СЏ СЂР°Р·РјРЅРѕР¶Р°С‚СЊ РѕРґРЅРѕ Рё С‚Рѕ Р¶Рµ Р¶РёРІРѕС‚РЅРѕРµ." << endl;
             return;
         }
 
         if (parent1->getvid() != parent2->getvid()) {
-            wcout << L"нельзя скрещивать разных животных";
+            wcout << L"РЅРµР»СЊР·СЏ СЃРєСЂРµС‰РёРІР°С‚СЊ СЂР°Р·РЅС‹С… Р¶РёРІРѕС‚РЅС‹С…";
             return;
         }
         /*
         if (parent1->getpol() == parent2->getpol()){
-            if(parent1->getpol() == 0) wcout << L"фу пидорасня идите отсюда!";
-            if (parent1->getpol() == 1) wcout << L"Девки ну вы шо лучше уж эскорт";
+            if(parent1->getpol() == 0) wcout << L"С„Сѓ РїРёРґРѕСЂР°СЃРЅСЏ РёРґРёС‚Рµ РѕС‚СЃСЋРґР°!";
+            if (parent1->getpol() == 1) wcout << L"Р”РµРІРєРё РЅСѓ РІС‹ С€Рѕ Р»СѓС‡С€Рµ СѓР¶ СЌСЃРєРѕСЂС‚";
             return;
         }
         */
         
 
-        wstring hybridName = parent1->getName() + L"_" + parent2->getName() + L" Гибрид";
+        wstring hybridName = parent1->getName() + L"_" + parent2->getName() + L" Р“РёР±СЂРёРґ";
         int hybridPrice = (parent1->getPrice() + parent2->getPrice()) / 2;
         hybridPrice = max(1000, hybridPrice);
 
-        Animal* newAnimal = new HybridAnimal(hybridName, 0, 5, hybridPrice, next_animal_id++, parent1->getvid() , 0 , L"Гибридный", parent1->getName(), parent2->getName());
+        Animal* newAnimal = new HybridAnimal(hybridName, 0, 5, hybridPrice, next_animal_id++, parent1->getvid() , 0 , L"Р“РёР±СЂРёРґРЅС‹Р№", parent1->getName(), parent2->getName());
         animals.push_back(newAnimal);
         parameters.addAnimal();
 
-        wcout << L"Гибридное животное " << hybridName << L" успешно создано!" << endl;
+        wcout << L"Р“РёР±СЂРёРґРЅРѕРµ Р¶РёРІРѕС‚РЅРѕРµ " << hybridName << L" СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅРѕ!" << endl;
     }
 
     void buyVolier() {
         int type, capacity;
 
-        wcout << L"Выберите тип вольера:\n";
-        wcout << L"1. Для арктических животных\n";
-        wcout << L"2. Для тропических животных\n";
-        wcout << L"Ваш выбор: ";
+        wcout << L"Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї РІРѕР»СЊРµСЂР°:\n";
+        wcout << L"1. Р”Р»СЏ Р°СЂРєС‚РёС‡РµСЃРєРёС… Р¶РёРІРѕС‚РЅС‹С…\n";
+        wcout << L"2. Р”Р»СЏ С‚СЂРѕРїРёС‡РµСЃРєРёС… Р¶РёРІРѕС‚РЅС‹С…\n";
+        wcout << L"Р’Р°С€ РІС‹Р±РѕСЂ: ";
         wcin >> type;
 
-        wcout << L"Введите количество мест в вольере (1-100): ";
+        wcout << L"Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµСЃС‚ РІ РІРѕР»СЊРµСЂРµ (1-100): ";
         wcin >> capacity;
 
         int pricePerPlace = (type == 1) ? 200 : 250;
         int totalPrice = pricePerPlace * capacity;
 
         if (parameters.getMoney() < totalPrice) {
-            wcout << L"Не хватает денег! Необходимая сумма: " << totalPrice << L" руб.\n";
+            wcout << L"РќРµ С…РІР°С‚Р°РµС‚ РґРµРЅРµРі! РќРµРѕР±С…РѕРґРёРјР°СЏ СЃСѓРјРјР°: " << totalPrice << L" СЂСѓР±.\n";
             return;
         }
 
         parameters.spendMoney(totalPrice);
-        wstring climateType = (type == 1) ? L"Арктический" : L"Тропический";
+        wstring climateType = (type == 1) ? L"РђСЂРєС‚РёС‡РµСЃРєРёР№" : L"РўСЂРѕРїРёС‡РµСЃРєРёР№";
 
-        wcout << L"Выберите тип животных для вольера:\n";
-        wcout << L"1. Хищники\n";
-        wcout << L"2. Травоядные\n";
+        wcout << L"Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї Р¶РёРІРѕС‚РЅС‹С… РґР»СЏ РІРѕР»СЊРµСЂР°:\n";
+        wcout << L"1. РҐРёС‰РЅРёРєРё\n";
+        wcout << L"2. РўСЂР°РІРѕСЏРґРЅС‹Рµ\n";
         int animalType;
         wcin >> animalType;
 
         bool isPredator = (animalType == 1);
         voliers.emplace_back(capacity, climateType, totalPrice, isPredator);
         parameters.addAviary();
-        wcout << L"Вольер успешно куплен!\n";
+        wcout << L"Р’РѕР»СЊРµСЂ СѓСЃРїРµС€РЅРѕ РєСѓРїР»РµРЅ!\n";
     }
 
     void upVolier() {
         if (voliers.empty() != true) {
             
             showVoliers();
-            wcout << L"какой хотите улучшить все вольеры\n";
+            wcout << L"РєР°РєРѕР№ С…РѕС‚РёС‚Рµ СѓР»СѓС‡С€РёС‚СЊ РІСЃРµ РІРѕР»СЊРµСЂС‹\n";
 
-            wcout << L"Введите ID: ";
+            wcout << L"Р’РІРµРґРёС‚Рµ ID: ";
             int id1;
             wcin >> id1;
             if(parameters.getMoney() > 200){
                 parameters.spendMoney(200);
             }
             else{
-                wcout << L"у вас нет вольеров\n";
+                wcout << L"Сѓ РІР°СЃ РЅРµС‚ РІРѕР»СЊРµСЂРѕРІ\n";
                 return;
             }
             for (auto& voler : voliers) {
@@ -791,7 +791,7 @@ public:
                 
             }
         }
-        else { wcout << L"у вас нет вольеров\n";
+        else { wcout << L"Сѓ РІР°СЃ РЅРµС‚ РІРѕР»СЊРµСЂРѕРІ\n";
         return;
         }
 
