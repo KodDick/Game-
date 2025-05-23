@@ -1,10 +1,8 @@
-
 #include "library.h"
 #include "class.h"
 #include "def.h"
 using namespace std;
 
-//main 
 
 int wmain() {
     setlocale(LC_ALL, "Russian");
@@ -14,11 +12,11 @@ int wmain() {
 
     ZooManager zooManager;
     wstring zooname;
-    wcout << L"ââåäèòå íàçâàíèå ñâîåãî çîîïàðêà:\n";  wcin >> zooname; 
+    wcout << L"введите название своего зоопарка:\n";  wcin >> zooname; 
 
     while (true) {
 
-        wcout << L"\nÇîîïàðê " << zooname << endl;
+        wcout << L"\nЗоопарк " << zooname << endl;
         zooManager.parameters.displayParameters();
         menu();
 
@@ -41,7 +39,7 @@ int wmain() {
         case 13: zooManager.breedAnimals(); break;
         case 14: zooManager.upVolier(); break;
         case 15: zooManager.AIBOLIT(); break;
-        default: wcout << L"âñå õóéíÿ äàâàé ïî íîâîé" << endl;
+        default: wcout << L"все хуйня давай по новой" << endl;
         }
     }
     return 0;
