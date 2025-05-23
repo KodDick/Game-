@@ -4,9 +4,7 @@
 #include "def.h"
 using namespace std;
 
-// Класс для управления параметрами игры
-
-
+//main 
 
 int wmain() {
     setlocale(LC_ALL, "Russian");
@@ -16,11 +14,11 @@ int wmain() {
 
     ZooManager zooManager;
     wstring zooname;
-    wcout << L"введите название своего зоопарка:\n";  wcin >> zooname; 
+    wcout << L"ГўГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ Г±ГўГ®ГҐГЈГ® Г§Г®Г®ГЇГ Г°ГЄГ :\n";  wcin >> zooname; 
 
     while (true) {
 
-        wcout << L"\nЗоопарк " << zooname << endl;
+        wcout << L"\nГ‡Г®Г®ГЇГ Г°ГЄ " << zooname << endl;
         zooManager.parameters.displayParameters();
         menu();
 
@@ -43,7 +41,7 @@ int wmain() {
         case 13: zooManager.breedAnimals(); break;
         case 14: zooManager.upVolier(); break;
         case 15: zooManager.AIBOLIT(); break;
-        default: wcout << L"все хуйня давай по новой" << endl;
+        default: wcout << L"ГўГ±ГҐ ГµГіГ©Г­Гї Г¤Г ГўГ Г© ГЇГ® Г­Г®ГўГ®Г©" << endl;
         }
     }
     return 0;
