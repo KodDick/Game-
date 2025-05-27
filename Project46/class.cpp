@@ -1,11 +1,11 @@
 
 #include "class.h"
 
-
+//параметры
 GameParameters::GameParameters() : day(1), money(10000), eat(100), popular(0), animal(0), aviary(0), workers(1), visitors(0) {}
 
     void GameParameters::displayParameters() {
-
+    //внешка
         wcout << L"Параметры игры   " << endl;
         wcout << L"День: " << day << endl;
         wcout << L"Деньги: " << money << L"$" << endl;
@@ -16,7 +16,7 @@ GameParameters::GameParameters() : day(1), money(10000), eat(100), popular(0), a
         wcout << L"Работников: " << workers << endl;
         wcout << L"Посетители: " << visitors << endl;
     }
-
+    //взаимодействия с параметрами
     void GameParameters::increaseDay() { day++; }
     void GameParameters::setVisitors(int count) { visitors = count; }
     void GameParameters::spendMoney(int amount) { money -= amount; if (money < 0) money = 0; }
@@ -30,7 +30,7 @@ GameParameters::GameParameters() : day(1), money(10000), eat(100), popular(0), a
     void GameParameters::spendpopular(int amount) { money -= amount; }
     void GameParameters::setEat(int value) { eat = value; }
     void GameParameters::reduceEat(int amount) { eat -= amount; if (eat < 0) eat = 0; }
-
+//покупка еды
     void GameParameters::buyFood(int amount) {
         const int foodPrice = 5;
         int totalCost = amount * foodPrice;
@@ -43,18 +43,18 @@ GameParameters::GameParameters() : day(1), money(10000), eat(100), popular(0), a
             wcout << L"Не хватает денег для покупки " << amount << L" единиц еды! Необходимая сумма: " << totalCost << L"$." << endl;
         }
     }
-
+// популярность рандом каждый день
     void GameParameters::randomizePopularity() {
         int change = rand() % 21 - 10;
         popular += change;
         if (popular < 0) popular = 0;
     }
-
+// кол во поситителей
     void GameParameters::calculateVisitors() {
         visitors = 2 * popular;
         if (visitors < 0) visitors = 0;
     }
-
+// Геттеры для параметров игры
     int GameParameters::getDay() const { return day; }
     int GameParameters::getMoney() const { return money; }
     int GameParameters::getEat() const { return eat; }
@@ -64,14 +64,14 @@ GameParameters::GameParameters() : day(1), money(10000), eat(100), popular(0), a
     int GameParameters::getWorkers() const { return workers; }
     int GameParameters::getVisitors() const { return visitors; }
 
-
+// Конструктор Animal - создание животного с заданными параметрами
 Animal::Animal(const wstring& name, int age, int weight, int price, int id, const wstring& climate, bool isPredator, int vid_, bool zabolel_)
         : name(name), age(age), weight(weight), price(price), id(id), climate(climate), isAlive(true), isPredator(isPredator), vid(vid_), volier_id(-1), zabolel(zabolel_) {
         pol = (rand() % 2 == 0) ? B : G;
     }
 
-    //virtual Animal::~Animal() {}
-
+    
+// Перечисление типов животных
     enum animalpenetration {
         tropcat,
         tropdog,
@@ -86,7 +86,7 @@ Animal::Animal(const wstring& name, int age, int weight, int price, int id, cons
         B,
         G
     };
-
+// Вывод информации о животном
     void Animal::printInfo() const {
         wcout << L"Имя: " << name << L", Возраст: " << age << L", Вес: " << weight
             << L" кг, Цена: " << price << L" руб., ID: " << id << L", Вольер: "
@@ -95,7 +95,7 @@ Animal::Animal(const wstring& name, int age, int weight, int price, int id, cons
             << L", Состояние: " << (isAlive ? L"Живое " : L"Мертвое ") << (pol == B ? L"мужик" : L"женщина") << (zabolel == true ? L" ЕБЛО ЗАБОЛЕЛО" : L" SPEED НЕ ОБНАРУЖЕН") << endl;
     }
 
-
+// Геттеры сетеры Animal
     int Animal::getId() const { return id; }
     int  Animal::getVolierId() const { return volier_id; }
     void  Animal::setVolierId(int id) { volier_id = id; }
@@ -111,7 +111,7 @@ Animal::Animal(const wstring& name, int age, int weight, int price, int id, cons
 
 
 
-
+// Конструкторы конкретных типов животных (наследники Animal)
 
     TropicalCat::TropicalCat(int id) : Animal(L"Тропический кот", 3, 4, 1000, id, L"Тропический", true, tropcat, 0) {}
 
@@ -146,9 +146,9 @@ Animal::Animal(const wstring& name, int age, int weight, int price, int id, cons
     }
 
 
-
+// Класс Worker (работник)
 Worker::Worker(int id, const wstring& name) : id(id), name(name), volier_id(-1) {}
-
+// Методы Worker
     bool Worker::isBusy() const { return volier_id != -1; }
     void Worker::assignVolier(int id) { volier_id = id; }
     void Worker::removeVolier() { volier_id = -1; }
@@ -157,10 +157,10 @@ Worker::Worker(int id, const wstring& name) : id(id), name(name), volier_id(-1) 
     int Worker::getVolierID() const { return volier_id; }
 
 
-
+// Класс VolierClass (вольер)
     VolierClass::VolierClass(int capacity, const wstring& climateType, int price, bool isPredator)
         : capacity(capacity), climateType(climateType), price(price), isPredator(isPredator) {}
-
+// Методы VolierClass
     void VolierClass::printInfo() const {
         wcout << L"Вольер: Вместимость " << capacity << L", Климат: " << climateType
             << L", Цена: " << price << L" руб., Тип: " << (isPredator ? L"Хищники" : L"Травоядные") << endl;
@@ -173,12 +173,12 @@ Worker::Worker(int id, const wstring& name) : id(id), name(name), volier_id(-1) 
 
 
 
-
+// Класс ZooManager (управление зоопарком)
     ZooManager::ZooManager() : next_animal_id(1), next_worker_id(1) {
         workers.push_back(new Worker(next_worker_id++, L"Игорь"));
         srand(static_cast<unsigned int>(time(0)));
     }
-
+// Деструктор ZooManager - освобождение памят
     ZooManager::~ZooManager() {
         for (auto animal : animals) delete animal;
         for (auto worker : workers) delete worker;
